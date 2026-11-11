@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#EEF6EF">
+  <title>For My 11:11 Wish</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌠</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mukta:wght@300;400;600&family=Kalam:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Twinkling stars, created by script.js -->
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="shooting-star" id="shootingStar" aria-hidden="true"></div>
+
+  <!-- ========== PAGE 1: OPENING ========== -->
+  <section class="page active" id="opening">
+    <div class="opening">
+      <p class="clock" aria-label="11:11">11<span class="colon">:</span>11</p>
+      <p class="date">11 November 2026</p>
+
+      <div class="portrait">
+        <img src="images/opening.jpeg" alt="Kadambari"
+             onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+        <span class="monogram" hidden>K</span>
+      </div>
+
+      <h1>For my 11:11 wish</h1>
+      <p class="sub">Some people wish on stars.<br>My wish has a name, Kadambari.</p>
+
+      <button class="wish-btn" id="wishBtn">Make a wish ✨</button>
+    </div>
+  </section>
+
+  <!-- Wish moment overlay -->
+  <div class="wish-overlay" id="wishOverlay" aria-live="polite">
+    <p>Close your eyes…<br>and make a wish.</p>
+  </div>
+
+  <!-- ========== PAGE 2: HER JOURNEY ========== -->
+  <section class="page" id="journey">
+    <header class="j-head">
+      <h2>Your journey, Kadambari</h2>
+      <p>Scroll slowly. Every leaf is a chapter of you.</p>
+    </header>
+
+    <div class="journey" id="journeyPath">
+      <svg class="vine" aria-hidden="true">
+        <path class="vine-track"/>
+        <path class="vine-grow"/>
+      </svg>
+      <span class="seed" aria-hidden="true"></span>
+
+      <!-- Seed: childhood -->
+      <article class="stop" data-stop="childhood">
+        <p class="stage">🌱 Childhood</p>
+        <figure class="photo tilt-l"><img src="images/childhood.jpg" alt="Kadambari as a little girl" loading="lazy"></figure>
+        <h3>The little troublemaker</h3>
+        <p>One Diwali, one firecracker, and the staircase of the house caught fire. At school, “टीचर, मला शी आली आहे” was the famous plan to escape back home.</p>
+        <p class="aside">You listened to no one. Some things never change. 😏</p>
+      </article>
+
+      <!-- First leaves: head girl -->
+      <article class="stop" data-stop="head_girl">
+        <p class="stage">🌿 Class 10</p>
+        <figure class="photo tilt-r"><img src="images/headgirl.jpg" alt="Illustration of Kadambari as head girl" loading="lazy"></figure>
+        <h3>The Head Girl</h3>
+        <p>You worked hard, your marks kept climbing, and in 10th the whole school stood behind its Head Girl.</p>
+        <p class="aside">People saw a leader in you long before you saw it yourself.</p>
+      </article>
+
+      <!-- Roots: Rahuri -->
+      <article class="stop" data-stop="rahuri">
+        <p class="stage">🌾 B.Sc. Agriculture</p>
+        <figure class="photo tilt-l"><img src="images/rahuri.jpg" alt="Kadambari working with soil" loading="lazy"></figure>
+        <h3>Rahuri, where your roots grew</h3>
+        <p>You earned your place in one of the top agriculture colleges in Maharashtra and shone in academics. You understand soil, seeds and seasons better than most people ever will.</p>
+        <p class="aside">Excellent at everything… except making friends with worms. 🪱😅</p>
+      </article>
+
+      <!-- Strong stem: Pune -->
+      <article class="stop" data-stop="pune">
+        <p class="stage">📚 Pune</p>
+        <div class="notebook">
+          <p>Pune gave you long study days, a sharper mind, and the kind of general knowledge that still surprises people.</p>
+          <p>Those years made you disciplined. They made you strong.</p>
+          <p class="friend">And Pune gave you Shital, a best friend for life. 👭</p>
+        </div>
+        <h3>The strong stem</h3>
+        <p class="aside">An exam can test knowledge. It can never measure a person.</p>
+      </article>
+
+      <!-- New branch: MBA -->
+      <article class="stop" data-stop="mba">
+        <p class="stage">🤖 MBA in AI</p>
+        <figure class="photo tilt-r"><img src="images/mba.jpg" alt="Kadambari at her MBA convocation" loading="lazy"></figure>
+        <h3>A new branch</h3>
+        <p>Agriculture, governance, and now an MBA with artificial intelligence.</p>
+        <p class="aside">Very few people carry all three. You do.</p>
+      </article>
+
+      <!-- Leaves everywhere: what makes you, you -->
+      <article class="stop" data-stop="what_makes_you">
+        <p class="stage">🏍️ What makes you, you</p>
+        <figure class="photo tilt-l"><img src="images/bike.jpg" alt="Kadambari with her motorbike in the hills" loading="lazy"></figure>
+        <h3>Rider, traveller, foodie</h3>
+        <p>Mountains, open roads and adventure sports. And after every ride, the only real question:</p>
+        <ul class="foods">
+          <li><img src="images/biryani.jpg" alt="" loading="lazy"><span>Biryani</span></li>
+          <li><img src="images/waffles.jpg" alt="" loading="lazy"><span>Belgian waffles</span></li>
+          <li><img src="images/momos.jpg" alt="" loading="lazy"><span>Momos</span></li>
+        </ul>
+      </article>
+
+      <!-- The flower: elder sister -->
+      <article class="stop" data-stop="elder_sister">
+        <p class="stage">🌺 The elder sister</p>
+        <figure class="photo tilt-r"><img src="images/gerbera.jpg" alt="A red gerbera" loading="lazy"></figure>
+        <h3>The one who takes care of everyone</h3>
+        <p>Long before all of this, you were already the elder daughter, looking after your family since you were little, often putting everyone before yourself.</p>
+        <p class="aside">Just like your favourite red gerbera: bright, strong, and the one who lights up the whole garden.</p>
+      </article>
+    </div>
+
+    <!-- The bloom -->
+    <div class="bloom" id="bloom">
+      <svg class="gerbera" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+      <p class="bloom-line">Look at everything you already are.</p>
+      <p class="bloom-sub">Now imagine what you’re going to become.</p>
+      <button class="wish-btn" id="toFutureBtn">Now see what’s ahead ✨</button>
+    </div>
+  </section>
+
+  <!-- ========== PAGE 3: HER FUTURE, A LETTER ========== -->
+  <section class="page" id="future">
+    <div class="letter-page">
+      <h2 class="page-title">A letter for you</h2>
+      <p class="page-sub">For today, and for every day you doubt yourself.</p>
+
+      <button class="envelope" id="envelope" aria-label="Open the letter">
+        <span class="env-back"></span>
+        <span class="env-flap"></span>
+        <span class="env-front"></span>
+        <span class="seal"><svg viewBox="-100 -100 200 200" aria-hidden="true"></svg></span>
+      </button>
+      <p class="tap-hint" id="tapHint">Tap to open</p>
+
+      <article class="letter" id="letter" lang="mr">
+        <p>प्रिय कादंबरी,</p>
+        <p>माझी इच्छा तर तूच आहेस, कादंबरी. पण आज ११:११ ला मी एक गोष्ट मागितली, की तू स्वतःला एकदा माझ्या नजरेतून पहावं.</p>
+        <p>तू सगळ्या क्षेत्रांमध्ये काम केलंस. Agriculture ते MBA, सगळी माहिती तुला आहे. तुझं जनरल नॉलेज पण खूप छान आहे. तू काहीही करू शकतेस, ज्याचा आपण विचार पण केला नाहीये.</p>
+        <p>पुण्यातली ती वर्षं तुला आजही कधी कधी दुखावतात, हे मला माहिती आहे. पण ती वर्षं वाया गेली नाहीत. त्याच वर्षांनी आजची कादंबरी घडवली आहे. परीक्षा ज्ञान तपासू शकते, माणसाची किंमत नाही.</p>
+        <p>कधी कधी career चा विचार करून तुला टेन्शन येईल. रात्री झोप लागणार नाही, सगळे विचार डोक्यात फिरत राहतील. तेव्हा थोडं थांब. एक मोठा श्वास घे. सगळं आजच ठरवायची गरज नाही. एका वेळी एकच पाऊल.</p>
+        <p>तुला उशीर झालेला नाही. प्रत्येकाची वेळ वेगळी असते, आणि तुझी वेळ अजून यायची आहे.</p>
+        <p>आणि हे कायम लक्षात ठेव, तू एकटी नाहीस.</p>
+        <p>लहानपणापासून तू सगळ्यांची काळजी घेतलीस. आता थोडी स्वतःचीही काळजी घे, आणि स्वतःवर थोडा जास्त विश्वास ठेव.</p>
+        <p>जेव्हा कधी स्वतःवर शंका येईल, तेव्हा हे पत्र पुन्हा उघड. आणि आठव, तू खूप काही करू शकतेस. तू आधीच खूप काही आहेस.</p>
+        <p class="sign">तुझा,<br>हर्षवर्धन</p>
+      </article>
+
+      <div class="after-letter" id="afterLetter">
+        <p class="keep-note">This letter will always be here, whenever you need it.</p>
+        <button class="wish-btn" id="toPromisesBtn">Read my promises 🤞</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAGE 4: MY PROMISES ========== -->
+  <section class="page" id="promises">
+    <div class="promise-page">
+      <h2 class="page-title">My promises to you</h2>
+      <p class="promise-count" id="promiseCount"></p>
+
+      <div class="promise-stage" id="promiseStage" aria-live="polite"></div>
+
+      <button class="wish-btn" id="nextPromiseBtn">Next promise</button>
+
+      <div class="all-promises" id="allPromises">
+        <ol id="promiseList"></ol>
+        <p class="promise-sign">— Harshvardhan</p>
+        <button class="wish-btn" id="toOurFutureBtn">See our future ✨</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAGE 5: OUR FUTURE TOGETHER ========== -->
+  <section class="page" id="our_future">
+    <div class="life-intro">
+      <h2 class="page-title">Our future together</h2>
+      <p class="life-lead">Before I ask you anything, let me show you what I see when I think of us.</p>
+      <p class="scroll-cue" aria-hidden="true">Scroll down</p>
+    </div>
+
+    <div class="year-bar" id="yearBar" aria-live="polite">
+      <span class="year" id="yearNum">2026</span>
+      <span class="year-label" id="yearLabel">Today</span>
+    </div>
+
+    <div class="life">
+      <article class="life-stage" data-year="2026" data-label="December 2026" data-stop="Our wedding">
+        <figure class="life-photo"><img src="images/future1.jpg" alt="Illustration of our wedding" loading="lazy"></figure>
+        <h3>Our wedding</h3>
+        <p>The day two families became one.</p>
+      </article>
+      <article class="life-stage" data-year="2027" data-label="2027" data-stop="Our first home">
+        <figure class="life-photo"><img src="images/future2.jpg" alt="Moving into our first home" loading="lazy"></figure>
+        <h3>Our first home</h3>
+        <p>Your plants, my mess, our home.</p>
+      </article>
+      <article class="life-stage" data-year="2028" data-label="2028" data-stop="The adventures">
+        <figure class="life-photo"><img src="images/future3.jpg" alt="Riding bikes together in the monsoon" loading="lazy"></figure>
+        <h3>The adventures</h3>
+        <p>Two bikes, one road, no plans.</p>
+      </article>
+      <article class="life-stage" data-year="2029" data-label="2029" data-stop="Our careers">
+        <figure class="life-photo"><img src="images/future4.jpg" alt="Kadambari presenting AI in Agriculture while I clap" loading="lazy"></figure>
+        <h3>Our careers</h3>
+        <p>Cheering the loudest for each other’s wins.</p>
+      </article>
+      <article class="life-stage" data-year="2031" data-label="2031" data-stop="Our house and car">
+        <figure class="life-photo"><img src="images/future5.jpg" alt="Our new house and car" loading="lazy"></figure>
+        <h3>Our house and car</h3>
+        <p>Building our dreams, brick by brick. Red gerberas at the door, of course.</p>
+      </article>
+      <article class="life-stage" data-year="2032" data-label="2032" data-stop="Our little one">
+        <figure class="life-photo"><img src="images/future6.jpg" alt="Holding our newborn" loading="lazy"></figure>
+        <h3>Our little one</h3>
+        <p>Tiny troublemaker, just like their mother. We’ll keep them away from Diwali firecrackers. 😏</p>
+      </article>
+      <article class="life-stage" data-year="2035" data-label="2035" data-stop="Playing with them">
+        <figure class="life-photo"><img src="images/future7.jpg" alt="Picnic with our children" loading="lazy"></figure>
+        <h3>Playing with them</h3>
+        <p>Biryani Sundays and momo nights.</p>
+      </article>
+      <article class="life-stage" data-year="2046" data-label="2046" data-stop="Watching them grow">
+        <figure class="life-photo"><img src="images/future8.jpg" alt="Trekking with our grown-up children" loading="lazy"></figure>
+        <h3>Watching them grow</h3>
+        <p>Proud parents, still holding hands on every trek.</p>
+      </article>
+      <article class="life-stage" data-year="2060" data-label="2060" data-stop="Grandchildren">
+        <figure class="life-photo"><img src="images/future9.jpg" alt="Telling stories to our grandchildren" loading="lazy"></figure>
+        <h3>Grandchildren</h3>
+        <p>Aaji telling stories about the Head Girl who rode bikes in the mountains.</p>
+      </article>
+      <article class="life-stage" data-year="2080" data-label="2080" data-stop="Our last sunset">
+        <figure class="life-photo"><img src="images/future10.jpg" alt="An old couple watching the sunset together" loading="lazy"></figure>
+        <h3>Our last sunset</h3>
+        <p>Till our last sunset, together.</p>
+      </article>
+    </div>
+
+    <div class="life-end" id="lifeEnd">
+      <p class="life-end-line">And every single day in between,<br>I want it to be you.</p>
+      <button class="wish-btn" id="toQuestionBtn">I have one question for you 💍</button>
+    </div>
+  </section>
+
+  <!-- ========== PAGE 6: THE QUESTION ========== -->
+  <section class="page" id="question">
+    <div class="ask">
+      <svg class="ask-flower" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+      <p class="ask-name">Kadambari,</p>
+      <h2 class="ask-q">Will you marry me?</h2>
+      <div class="ask-btns">
+        <button class="ans yes" id="yesBtn">Yes</button>
+        <button class="ans no" id="noBtn">No</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAGE 6b: HER ANSWER ========== -->
+  <section class="page" id="answer">
+    <div class="petals" id="petals" aria-hidden="true"></div>
+
+    <div class="reply" id="replyYes" hidden>
+      <p class="reply-big">You said yes. 🥹</p>
+      <p>Thank you for choosing me, Kadambari.</p>
+      <p>I will keep every promise I made to you today, one day at a time, for the rest of our lives.</p>
+      <p class="reply-call">Now please call me. I’m waiting. 📞</p>
+      <button class="wish-btn" data-next>One last thing</button>
+    </div>
+
+    <div class="reply" id="replyNo" hidden>
+      <p class="reply-big">Thank you for being honest with me.</p>
+      <p>Your answer doesn’t change anything I wrote to you tonight. Every word in that letter is still true, and you still deserve every good thing in it.</p>
+      <p>I will always respect your decision, Kadambari.</p>
+      <button class="wish-btn" data-next>One last thing</button>
+    </div>
+  </section>
+
+  <!-- ========== PAGE 7: MARATHI MESSAGE + END ========== -->
+  <section class="page" id="final">
+    <div class="final" lang="mr">
+      <p class="final-main">सगळं नीट होईल, कादंबरी.</p>
+      <p>आशा सोडू नकोस.</p>
+      <p>जे तुझ्यासाठी आहे, ते तुला नक्की मिळेल.</p>
+      <p>उद्याच्या काळजीत आजचा दिवस वाया घालवू नकोस.</p>
+      <p>तू जशी आहेस, तशीच खूप छान आहेस.</p>
+      <p>आणि लक्षात ठेव, तू कधीच एकटी नाहीस.</p>
+      <p class="final-sign">— हर्षवर्धन</p>
+      <p class="the-end" lang="en">The end. ✨</p>
+      <a class="letter-link" href="#letter" id="rereadLetter" lang="en">Read your letter again</a>
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
